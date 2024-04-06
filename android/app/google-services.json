@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "601413324687",
+    "project_id": "denly-app",
+    "storage_bucket": "denly-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:601413324687:android:a705e49254d8b225ec45fa",
+        "android_client_info": {
+          "package_name": "com.example.denly"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSFZ87vErv2ZncFrfFCvqMT3g6g6nconU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
