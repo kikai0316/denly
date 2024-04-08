@@ -9,6 +9,7 @@ class InitialPage extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    const ss = "osjojsodvj";
     return const Scaffold();
   }
 }
