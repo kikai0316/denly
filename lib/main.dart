@@ -13,7 +13,6 @@ class MyApp extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp(
-      routes: const {},
       debugShowCheckedModeBanner: false,
       home: Surveillance(
         onForeground: () async {
