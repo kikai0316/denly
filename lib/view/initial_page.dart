@@ -14,4 +14,3 @@ class InitialPage extends HookConsumerWidget {
     return const Scaffold();
   }
 }
-//flutterfire configure
