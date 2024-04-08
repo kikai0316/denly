@@ -9,8 +9,6 @@ class InitialPage extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final safeAreaWidth = MediaQuery.of(context).size.width;
-    final safeAreaHeight = safeHeight(context);
     return const Scaffold();
   }
 }
