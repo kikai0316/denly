@@ -17,7 +17,7 @@ DecorationImage networkImg(String url) {
   );
 }
 
-DecorationImage memorytImg(Uint8List memory) {
+DecorationImage memoryImg(Uint8List memory) {
   return DecorationImage(
     image: MemoryImage(memory),
     fit: BoxFit.cover,

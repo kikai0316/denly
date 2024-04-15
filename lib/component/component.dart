@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:typed_data';
 import 'dart:ui';
 
 import 'package:denly/constant/img.dart';
@@ -99,6 +100,7 @@ Widget imgWidget({
   String? networkUrl,
   File? fileData,
   double? size,
+  Uint8List? memoryData,
   BoxBorder? border,
   bool? isCircle,
   double borderRadius = 10,
@@ -117,9 +119,11 @@ Widget imgWidget({
           ? fileImg(fileData)
           : networkUrl != null
               ? networkImg(networkUrl)
-              : assetFile != null
-                  ? assetImg(assetFile)
-                  : null,
+              : memoryData != null
+                  ? memoryImg(memoryData)
+                  : assetFile != null
+                      ? assetImg(assetFile)
+                      : null,
       borderRadius:
           isCircle != true ? BorderRadius.circular(borderRadius) : null,
       boxShadow: boxShadow,
