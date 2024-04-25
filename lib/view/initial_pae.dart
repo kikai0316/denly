@@ -45,6 +45,18 @@ class InitialPage extends HookConsumerWidget {
       loading: () => null,
     );
 
+    // useEffect(() {
+    //   Future(() async {
+    //     final byteData = await rootBundle.load("assets/img/test.png");
+    //     final ss = ref.read(allFriendsNotifierProvider.notifier);
+    //     ss.upData({
+    //       "img": byteData.buffer.asUint8List(),
+    //       "time": DateTime.now(),
+    //     });
+    //   });
+    //   return null;
+    // }, []);
+
     return Scaffold(
       extendBody: true,
       backgroundColor: Colors.black,
@@ -57,9 +69,11 @@ class InitialPage extends HookConsumerWidget {
             if (post != null) searchResultsWidget(context),
             for (int i = 0; i < 2; i++)
               if (post != null)
-                const OnPostWidget(
-                  img:
-                      "https://i.pinimg.com/474x/f5/0b/96/f50b96edeb0d5492af52386dde13c8ea.jpg",
+                OnPostWidget(
+                  img: [
+                    "https://i.pinimg.com/474x/f5/0b/96/f50b96edeb0d5492af52386dde13c8ea.jpg",
+                    "https://i.pinimg.com/474x/99/ba/e8/99bae814b33415af1f1e1f7f726ee114.jpg",
+                  ][i],
                 ),
             nSliverSizeBox(safeAreaHeight * 0.07),
           ],

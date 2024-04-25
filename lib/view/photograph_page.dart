@@ -16,7 +16,6 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:shake/shake.dart';
 
 CameraController? cameraController;
 // ShakeDetector? detector;
@@ -32,7 +31,7 @@ class PhotographPage extends HookConsumerWidget {
     final safeAreaHeight = safeHeight(context);
     final safeAreaWidth = MediaQuery.of(context).size.width;
     final isFlash = useState<bool>(false);
-    final isFrontCamera = useState<bool>(false);
+    final isFrontCamera = useState<bool>(true);
     final isLoading = useState(false);
     final picture = useState<Uint8List?>(null);
     final isTakePictureLoading = useState<bool>(false);
@@ -49,11 +48,11 @@ class PhotographPage extends HookConsumerWidget {
               isFrontCamera,
             );
 
-            ShakeDetector.autoStart(
-              shakeThresholdGravity: 1.2,
-              shakeSlopTimeMS: 1000,
-              onPhoneShake: () => takePicture(context, picture, isLoading),
-            );
+            // ShakeDetector.autoStart(
+            //   shakeThresholdGravity: 1.2,
+            //   shakeSlopTimeMS: 1000,
+            //   onPhoneShake: () => takePicture(context, picture, isLoading),
+            // );
           } catch (e) {
             return;
           }
@@ -167,7 +166,8 @@ class PhotographPage extends HookConsumerWidget {
                       final allFriendsNotifier =
                           ref.read(allFriendsNotifierProvider.notifier);
                       await allFriendsNotifier.upData(
-                          {"img": picture.value, "time": DateTime.now()},);
+                        {"img": picture.value, "time": DateTime.now()},
+                      );
                       isLoading.value = false;
                       // ignore: use_build_context_synchronously
                       Navigator.pop(context);
